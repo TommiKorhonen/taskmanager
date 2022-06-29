@@ -2,6 +2,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Stack from "@mui/material/Stack";
 import { CssBaseline } from "@mui/material";
 import Sidebar from "./components/navigation/Sidebar";
+import Navbar from "./components/navigation/Navbar";
 const theme = createTheme({
   components: {
     // Name of the component
@@ -37,13 +38,14 @@ const theme = createTheme({
   },
 });
 
+const sidebarWidth = 300;
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Stack direction="row" justifyContent="space-between">
-        <Sidebar />
-        <Sidebar />
+        <Navbar sidebarWidth={sidebarWidth} />
+        <Sidebar sidebarWidth={sidebarWidth} />
       </Stack>
     </ThemeProvider>
   );

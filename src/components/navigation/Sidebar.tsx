@@ -11,10 +11,10 @@ import LightModeIcon from "@mui/icons-material/LightMode";
 import ModeNightIcon from "@mui/icons-material/ModeNight";
 import Switch from "@mui/material/Switch";
 import AddIcon from "@mui/icons-material/Add";
-const Sidebar = () => {
+const Sidebar = ({ sidebarWidth }: { sidebarWidth: number }) => {
   return (
     <Box bgcolor="lightblue">
-      <Box height="100vh" width="300px">
+      <Box height="100vh" width={sidebarWidth}>
         <Box margin="32px">
           <img src="./assets/logo-dark.svg" alt="" />
         </Box>
