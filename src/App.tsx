@@ -3,6 +3,8 @@ import Stack from "@mui/material/Stack";
 import { CssBaseline } from "@mui/material";
 import Sidebar from "./components/navigation/Sidebar";
 import Navbar from "./components/navigation/Navbar";
+import TodoColumn from "./components/TodoColumn";
+import { Box } from "@mui/system";
 const theme = createTheme({
   components: {
     // Name of the component
@@ -43,9 +45,13 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Stack direction="row" justifyContent="space-between">
+      <Stack direction="row" bgcolor="#F4F7FD">
         <Navbar sidebarWidth={sidebarWidth} />
         <Sidebar sidebarWidth={sidebarWidth} />
+        <Box display="flex" gap="24px" marginLeft="24px" marginTop="88px">
+          <TodoColumn />
+          <TodoColumn />
+        </Box>
       </Stack>
     </ThemeProvider>
   );
