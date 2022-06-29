@@ -1,25 +1,51 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import Stack from "@mui/material/Stack";
+import { CssBaseline } from "@mui/material";
+import Sidebar from "./components/navigation/Sidebar";
+const theme = createTheme({
+  components: {
+    // Name of the component
+  },
+  palette: {
+    primary: {
+      main: "#635FC7",
+    },
+  },
+  typography: {
+    fontFamily: ["Plus Jakarta Sans", "sans-serif"].join(","),
+    h1: {
+      fontWeight: 700,
+      fontSize: "24px",
+      lineHeight: "30px",
+    },
+    h2: {
+      fontWeight: 700,
+      fontSize: "18px",
+      lineHeight: "23px",
+    },
+    h3: {
+      fontWeight: 700,
+      fontSize: "15px",
+      lineHeight: "19px",
+    },
+    h4: {
+      fontWeight: 700,
+      fontSize: "12px",
+      lineHeight: "15px",
+      letterSpacing: "2.4px",
+    },
+  },
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Stack direction="row" justifyContent="space-between">
+        <Sidebar />
+        <Sidebar />
+      </Stack>
+    </ThemeProvider>
   );
 }
 
