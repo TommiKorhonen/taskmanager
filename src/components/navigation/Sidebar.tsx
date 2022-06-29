@@ -11,6 +11,7 @@ import LightModeIcon from "@mui/icons-material/LightMode";
 import ModeNightIcon from "@mui/icons-material/ModeNight";
 import Switch from "@mui/material/Switch";
 import AddIcon from "@mui/icons-material/Add";
+
 const Sidebar = ({ sidebarWidth }: { sidebarWidth: number }) => {
   return (
     <Box bgcolor="lightblue">
