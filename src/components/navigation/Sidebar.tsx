@@ -14,8 +14,8 @@ import AddIcon from "@mui/icons-material/Add";
 
 const Sidebar = ({ sidebarWidth }: { sidebarWidth: number }) => {
   return (
-    <Box bgcolor="lightblue">
-      <Box height="100vh" width={sidebarWidth}>
+    <Box bgcolor="white">
+      <Box overflow="hidden" height="100vh" width={sidebarWidth}>
         <Box margin="32px">
           <img src="./assets/logo-dark.svg" alt="" />
         </Box>

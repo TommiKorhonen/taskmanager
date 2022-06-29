@@ -6,12 +6,20 @@ import Button from "@mui/material/Button";
 import AddIcon from "@mui/icons-material/Add";
 const Navbar = ({ sidebarWidth }: { sidebarWidth: number }) => {
   return (
-    <AppBar sx={{ width: `calc(100% - ${sidebarWidth}px)` }}>
+    <AppBar
+      elevation={1}
+      sx={{ width: `calc(100% - ${sidebarWidth}px)`, bgcolor: "white" }}
+    >
       <Toolbar>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+        <Typography
+          color="black"
+          variant="h6"
+          component="div"
+          sx={{ flexGrow: 1 }}
+        >
           Platform Launch
         </Typography>
-        <Button startIcon={<AddIcon />} variant="outlined" color="inherit">
+        <Button startIcon={<AddIcon />} variant="outlined">
           Add New Task
         </Button>
       </Toolbar>
