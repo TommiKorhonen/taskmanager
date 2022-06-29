@@ -7,7 +7,10 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/Inbox";
 import DraftsIcon from "@mui/icons-material/Drafts";
-
+import LightModeIcon from "@mui/icons-material/LightMode";
+import ModeNightIcon from "@mui/icons-material/ModeNight";
+import Switch from "@mui/material/Switch";
+import AddIcon from "@mui/icons-material/Add";
 const Sidebar = () => {
   return (
     <Box bgcolor="lightblue">
@@ -15,28 +18,38 @@ const Sidebar = () => {
         <Box margin="32px">
           <img src="./assets/logo-dark.svg" alt="" />
         </Box>
-        <Box>
-          <Typography margin="32px" variant="h4" component="span">
-            All Boards (3)
-          </Typography>
-          <List>
-            <ListItem disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  <InboxIcon />
-                </ListItemIcon>
-                <ListItemText primary="Inbox" />
-              </ListItemButton>
-            </ListItem>
-            <ListItem disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  <DraftsIcon />
-                </ListItemIcon>
-                <ListItemText primary="Drafts" />
-              </ListItemButton>
-            </ListItem>
-          </List>
+
+        <Typography margin="32px" variant="h4" component="span">
+          All Boards (3)
+        </Typography>
+        <List>
+          <ListItem disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                <InboxIcon />
+              </ListItemIcon>
+              <ListItemText primary="Inbox" />
+            </ListItemButton>
+          </ListItem>
+          <ListItem disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                <DraftsIcon />
+              </ListItemIcon>
+              <AddIcon />
+              <ListItemText primary="Create New Board" />
+            </ListItemButton>
+          </ListItem>
+        </List>
+        <Box marginX="24px" bgcolor=" #F4F7FD">
+          <ListItem
+            disablePadding
+            sx={{ display: "flex", justifyContent: "center" }}
+          >
+            <LightModeIcon />
+            <Switch />
+            <ModeNightIcon />
+          </ListItem>
         </Box>
       </Box>
     </Box>
