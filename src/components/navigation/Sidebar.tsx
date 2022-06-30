@@ -13,10 +13,14 @@ import Switch from "@mui/material/Switch";
 import AddIcon from "@mui/icons-material/Add";
 import BasicModal from "../Modal/BasicModal";
 import AddBoard from "../Forms/AddBoard";
+import AutoAwesomeMosaicIcon from "@mui/icons-material/AutoAwesomeMosaic";
 import { useState } from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "../../app/store";
 
 const Sidebar = ({ sidebarWidth }: { sidebarWidth: number }) => {
   const [open, setOpen] = useState(false);
+  const boards = useSelector((state: RootState) => state.boards.value);
   const closeModal = () => {
     setOpen(false);
   };
@@ -27,19 +31,21 @@ const Sidebar = ({ sidebarWidth }: { sidebarWidth: number }) => {
           <Box margin="32px">
             <img src="./assets/logo-dark.svg" alt="" />
           </Box>
-
           <Typography margin="32px" variant="h4" component="span">
-            All Boards (3)
+            All Boards {`(${boards.length})`}
           </Typography>
           <List>
-            <ListItem disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  <InboxIcon />
-                </ListItemIcon>
-                <ListItemText primary="Inbox" />
-              </ListItemButton>
-            </ListItem>
+            {boards.length > 0 &&
+              boards.map((board) => (
+                <ListItem disablePadding>
+                  <ListItemButton>
+                    <ListItemIcon>
+                      <AutoAwesomeMosaicIcon />
+                    </ListItemIcon>
+                    <ListItemText primary={board.name} />
+                  </ListItemButton>
+                </ListItem>
+              ))}
             <ListItem disablePadding>
               <ListItemButton onClick={() => setOpen(true)}>
                 <ListItemIcon>
