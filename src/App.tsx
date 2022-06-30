@@ -5,6 +5,7 @@ import Sidebar from "./components/navigation/Sidebar";
 import Navbar from "./components/navigation/Navbar";
 import TodoColumn from "./components/TodoColumn";
 import { Box } from "@mui/system";
+
 const theme = createTheme({
   components: {
     // Name of the component
