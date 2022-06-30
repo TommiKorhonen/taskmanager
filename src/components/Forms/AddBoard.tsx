@@ -4,11 +4,22 @@ import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import { Button } from "@mui/material";
-const AddBoard = () => {
+import { useDispatch } from "react-redux";
+import { addBoard } from "../../features/boardSlice";
+import { v4 as uuidv4 } from "uuid";
+const AddBoard = ({ closeModal }: { closeModal: () => void }) => {
   const [name, setName] = useState("");
+  const dispatch = useDispatch();
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(name);
+    dispatch(
+      addBoard({
+        id: uuidv4(),
+        name,
+        columns: [],
+      })
+    );
+    closeModal();
   };
   return (
     <form onSubmit={handleSubmit}>
@@ -26,7 +37,7 @@ const AddBoard = () => {
           placeholder="e.g. Web Design"
         />
       </Box>
-      <Button fullWidth variant="contained">
+      <Button type="submit" fullWidth variant="contained">
         Create New Board
       </Button>
     </form>
